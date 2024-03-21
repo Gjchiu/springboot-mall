@@ -1,5 +1,6 @@
 package com.gjchiu.springbootmall.service.Impl;
 
+import com.gjchiu.springbootmall.constant.ProductCategory;
 import com.gjchiu.springbootmall.dao.ProductDao;
 import com.gjchiu.springbootmall.dto.ProductRequest;
 import com.gjchiu.springbootmall.model.Product;
@@ -36,7 +37,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> getProducts() {
-        return productDao.getProducts();
+    public List<Product> getProducts(ProductCategory productCategory, String search) {
+        return productDao.getProducts(productCategory, search);
     }
 }
