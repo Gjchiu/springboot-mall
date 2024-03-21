@@ -7,6 +7,8 @@ import com.gjchiu.springbootmall.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
@@ -31,5 +33,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteProduct(Integer productId) {
         productDao.deleteProduct(productId);
+    }
+
+    @Override
+    public List<Product> getProducts() {
+        return productDao.getProducts();
     }
 }
