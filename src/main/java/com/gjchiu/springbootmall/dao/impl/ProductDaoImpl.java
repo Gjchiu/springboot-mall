@@ -1,6 +1,5 @@
 package com.gjchiu.springbootmall.dao.impl;
 
-import com.gjchiu.springbootmall.constant.ProductCategory;
 import com.gjchiu.springbootmall.dao.ProductDao;
 import com.gjchiu.springbootmall.dto.ProductQueryParams;
 import com.gjchiu.springbootmall.dto.ProductRequest;
@@ -12,12 +11,14 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Repository
 @Component
 @RequiredArgsConstructor
 public class ProductDaoImpl implements ProductDao {

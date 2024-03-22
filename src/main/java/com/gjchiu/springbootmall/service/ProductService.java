@@ -1,6 +1,5 @@
 package com.gjchiu.springbootmall.service;
 
-import com.gjchiu.springbootmall.constant.ProductCategory;
 import com.gjchiu.springbootmall.dto.ProductQueryParams;
 import com.gjchiu.springbootmall.dto.ProductRequest;
 import com.gjchiu.springbootmall.model.Product;
