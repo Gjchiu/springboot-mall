@@ -1,7 +1,7 @@
 package com.gjchiu.springbootmall.controller;
 
 import com.gjchiu.springbootmall.dto.UserLoginRequest;
-import com.gjchiu.springbootmall.dto.UserRequest;
+import com.gjchiu.springbootmall.dto.UserRegisterRequest;
 import com.gjchiu.springbootmall.model.User;
 import com.gjchiu.springbootmall.service.UserService;
 import jakarta.validation.Valid;
@@ -19,8 +19,8 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/users/register")
-    public ResponseEntity<User> register(@RequestBody @Valid UserRequest userRequest){
-        Integer userId = userService.register(userRequest);
+    public ResponseEntity<User> register(@RequestBody @Valid UserRegisterRequest userRegisterRequest){
+        Integer userId = userService.register(userRegisterRequest);
         User user = userService.getUserById(userId);
 
         if(user != null){

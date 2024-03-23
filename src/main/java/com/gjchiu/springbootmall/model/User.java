@@ -1,9 +1,6 @@
 package com.gjchiu.springbootmall.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
 import java.sql.Timestamp;
 
@@ -13,7 +10,7 @@ public class User {
 
     @JsonIgnore
     private String password;
-    private Timestamp createDate;
+    private Timestamp createdDate;
     private Timestamp lastModifiedDate;
 
     public Integer getUserId() {
@@ -40,12 +37,12 @@ public class User {
         this.password = password;
     }
 
-    public Timestamp getCreateDate() {
-        return createDate;
+    public Timestamp getCreatedDate() {
+        return createdDate;
     }
 
-    public void setCreateDate(Timestamp createDate) {
-        this.createDate = createDate;
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
     }
 
     public Timestamp getLastModifiedDate() {

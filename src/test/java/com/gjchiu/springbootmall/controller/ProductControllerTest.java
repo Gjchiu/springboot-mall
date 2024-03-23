@@ -11,7 +11,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.transaction.annotation.Transactional;
 
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -56,7 +55,6 @@ public class ProductControllerTest {
     }
 
     // 創建商品
-    @Transactional
     @Test
     public void createProduct_success() throws Exception {
         ProductRequest productRequest = new ProductRequest();
@@ -85,7 +83,6 @@ public class ProductControllerTest {
                 .andExpect(jsonPath("$.lastModifiedDate", notNullValue()));
     }
 
-    @Transactional
     @Test
     public void createProduct_illegalArgument() throws Exception {
         ProductRequest productRequest = new ProductRequest();
@@ -103,7 +100,6 @@ public class ProductControllerTest {
     }
 
     // 更新商品
-    @Transactional
     @Test
     public void updateProduct_success() throws Exception {
         ProductRequest productRequest = new ProductRequest();
@@ -132,7 +128,6 @@ public class ProductControllerTest {
                 .andExpect(jsonPath("$.lastModifiedDate", notNullValue()));
     }
 
-    @Transactional
     @Test
     public void updateProduct_illegalArgument() throws Exception {
         ProductRequest productRequest = new ProductRequest();
@@ -150,7 +145,6 @@ public class ProductControllerTest {
 
     }
 
-    @Transactional
     @Test
     public void updateProduct_productNotFound() throws Exception {
         ProductRequest productRequest = new ProductRequest();
@@ -172,7 +166,6 @@ public class ProductControllerTest {
     }
 
     // 刪除商品
-    @Transactional
     @Test
     public void deleteProduct_success() throws Exception {
         RequestBuilder requestBuilder = MockMvcRequestBuilders
@@ -182,7 +175,6 @@ public class ProductControllerTest {
                 .andExpect(status().is(204));
     }
 
-    @Transactional
     @Test
     public void deleteProduct_deleteNonExistingProduct() throws Exception {
         RequestBuilder requestBuilder = MockMvcRequestBuilders

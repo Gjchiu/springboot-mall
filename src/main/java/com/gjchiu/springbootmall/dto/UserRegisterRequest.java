@@ -2,11 +2,8 @@ package com.gjchiu.springbootmall.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
-import java.sql.Timestamp;
-
-public class UserRequest {
+public class UserRegisterRequest {
     @NotBlank
     @Email
     private String email;
