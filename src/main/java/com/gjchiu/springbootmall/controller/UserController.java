@@ -1,5 +1,6 @@
 package com.gjchiu.springbootmall.controller;
 
+import com.gjchiu.springbootmall.dto.UserLoginRequest;
 import com.gjchiu.springbootmall.dto.UserRequest;
 import com.gjchiu.springbootmall.model.User;
 import com.gjchiu.springbootmall.service.UserService;
@@ -27,5 +28,12 @@ public class UserController {
         }else{
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
+    }
+
+    @PostMapping("/users/login")
+    public ResponseEntity<User> login(@RequestBody UserLoginRequest userRequest){
+        User user = userService.login(userRequest);
+
+        return ResponseEntity.status(HttpStatus.OK).body(user);
     }
 }
