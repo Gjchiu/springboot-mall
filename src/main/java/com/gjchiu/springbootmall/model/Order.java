@@ -1,6 +1,7 @@
 package com.gjchiu.springbootmall.model;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Order {
     private Integer orderId;
@@ -8,6 +9,7 @@ public class Order {
     private Integer totalAmount;
     private Timestamp createdDate;
     private Timestamp lastModifiedDate;
+    private List<OrderItem> orderItemList;
 
     public Integer getOrderId() {
         return orderId;
@@ -47,5 +49,13 @@ public class Order {
 
     public void setLastModifiedDate(Timestamp lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public List<OrderItem> getOrderItemList() {
+        return orderItemList;
+    }
+
+    public void setOrderItemList(List<OrderItem> orderItemList) {
+        this.orderItemList = orderItemList;
     }
 }
