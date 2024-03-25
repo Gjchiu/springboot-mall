@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS `user`
     last_modified_date TIMESTAMP    NOT NULL
 );
 
-CREATE TABLE `order`
+CREATE TABLE IF NOT EXISTS `order`
 (
     order_id           INT       NOT NULL PRIMARY KEY AUTO_INCREMENT,
     user_id            INT       NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE `order`
     last_modified_date TIMESTAMP NOT NULL
 );
 
-CREATE TABLE order_item
+CREATE TABLE IF NOT EXISTS order_item
 (
     order_item_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     order_id      INT NOT NULL,

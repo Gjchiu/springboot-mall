@@ -53,7 +53,7 @@ public class OrderController {
         page.setTotal(total);
         page.setResults(orderList);
 
-        return ResponseEntity.status(HttpStatus.CREATED).body(page);
+        return ResponseEntity.status(HttpStatus.OK).body(page);
     }
 
 }

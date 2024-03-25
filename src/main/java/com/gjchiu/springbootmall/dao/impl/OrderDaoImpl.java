@@ -125,7 +125,7 @@ public class OrderDaoImpl implements OrderDao {
 
         Integer total = namedParameterJdbcTemplate.queryForObject(sql, map, Integer.class);
 
-        return null;
+        return total;
     }
 
     private String addFilteringSql(String sql, Map map, OrderQueryParams orderQueryParams){
